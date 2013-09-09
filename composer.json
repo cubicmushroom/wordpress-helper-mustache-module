@@ -8,7 +8,17 @@
             "email": "toby@cubicmushroom.co.uk"
         }
     ],
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/CubicMushroom/wordpress-helper.git"
+        }
+    ],
     "require": {
-
+        "cubicmushroom/wordpress-helper" : "dev-master",
+        "mustache/mustache"              : "dev-master"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "3.7.*@dev"
     }
 }
