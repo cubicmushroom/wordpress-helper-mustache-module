@@ -1,0 +1,14 @@
+{
+    "name": "cubicmushroom/wordpress-helper-mustache-module",
+    "description": "Module for adding support for Mustache",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Toby Griffiths",
+            "email": "toby@cubicmushroom.co.uk"
+        }
+    ],
+    "require": {
+
+    }
+}
