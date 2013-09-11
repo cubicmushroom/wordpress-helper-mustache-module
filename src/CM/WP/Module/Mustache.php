@@ -52,6 +52,42 @@ if (!class_exists('CM_WP_Module_Mustache')) {
 
 
 
+
+        /**************************
+         * Context helper methods *
+         **************************/
+
+        /**
+         * Instantiates a CM_WP_Module_Mustache_Context_Form
+         *
+         * @param string $frm_action frm_action for the form
+         *
+         * @return CM_WP_Module_Mustache_Context_Form
+         */
+        public function get_form_context( $frm_action = null ) {
+            if ( is_null( $frm_action ) ) {
+                return new CM_WP_Module_Mustache_Context_Form();
+            }
+
+            return new CM_WP_Module_Mustache_Context_Form( $frm_action );
+        }
+
+
+        /**
+         * Verifies the submitted form data for forms build using a
+         * CM_WP_Module_Mustache_Context_Form context object to protect hidden form
+         * fields
+         *
+         * @param array $form_vars Form data (probably $_POST or $_GET)
+         *
+         * @return bool
+         */
+        public function verify_form_nonce( $form_vars ) {
+            return CM_WP_Module_Mustache_Context_Form::verify_nonce( $form_vars );
+        }
+
+
+
         /*********************************
          * Mustache pass-through methods *
          *********************************/
