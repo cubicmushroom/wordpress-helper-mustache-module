@@ -96,11 +96,12 @@ if (!class_exists('CM_WP_Module_Mustache')) {
          * Calls the render method on the Mustache_Engine object
          * 
          * @param string       $template Template string/file
-         * @param array|object $context  Context to pass to render for templating
+         * @param array|object $context  (optional) Context to pass to render for
+         *                               templating
          *
          * @return string
          */
-        public function render( $template, $context ) {
+        public function render( $template, $context = array() ) {
             return $this->mustache->render( $template, $context );
         }
     }
