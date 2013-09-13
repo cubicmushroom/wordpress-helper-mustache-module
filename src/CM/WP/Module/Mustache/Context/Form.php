@@ -140,15 +140,6 @@ if (!class_exists('CM_WP_Module_Mustache_Context_Form')) {
                 false
             );
 
-            // Add frm_action if set
-            if ( isset( $this->frm_action ) ) {
-                $input_fields[] = sprintf(
-                    self::HTML_HIDDEN_INPUT,
-                    'frm_action',
-                    $this->frm_action
-                );
-            }
-
             return implode( '', $input_fields );
         }
 
