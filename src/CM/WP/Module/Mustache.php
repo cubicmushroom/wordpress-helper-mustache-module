@@ -58,7 +58,16 @@ if (!class_exists('CM_WP_Module_Mustache')) {
          **************************/
 
         /**
-         * Instantiates a CM_WP_Module_Mustache_Context_Form
+         * Instantiates a CM_WP_Module_Mustache_Context object
+         *
+         * @return CM_WP_Module_Mustache_Context
+         */
+        public function get_context() {
+            return new CM_WP_Module_Mustache_Context();
+        }
+
+        /**
+         * Instantiates a CM_WP_Module_Mustache_Context_Form object
          *
          * @param string $frm_action frm_action for the form
          *
