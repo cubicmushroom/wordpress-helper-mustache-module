@@ -102,7 +102,11 @@ if (!class_exists('CM_WP_Module_Mustache_Context_Form')) {
          * @param string|int $value Value for the field
          */
         public function add_protected_value( $name, $value ) {
-            $this->protected_hidden_fields[$name] = $value;
+            // We need to cast the $value as a string, so that when the values are
+            // sorted to build the nonce action string prior to the form submission
+            // the order is the same as after the form has posted (& all the values
+            // have been converted to strings during the form submission)
+            $this->protected_hidden_fields[$name] = (string) $value;
         }
 
 
