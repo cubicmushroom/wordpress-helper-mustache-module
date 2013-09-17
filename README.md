@@ -33,6 +33,9 @@ Form Handling Helper
 
 This module also provides context class/objects that are useful for rendering forms.  These offer the advantage over regular arrays or objects in that they provide an easy way to protect fields values using the nonce functionality.
 
+
+### Setting up the form
+
 To use this use something similar to the following code…
 
 	// Prepare a CM_WP_Module_Mustache_Context_Form object for use, that 
@@ -67,6 +70,9 @@ To use this use something similar to the following code…
     $mustache->render( '<template_file>', $form_context );
 
 
+### Rendering the form
+
+
 Now, in your Mustache template, include the 'form_context_fields' tag in addition to the regular ones you wish to use.  This will include all the required hidden fields to support the nonce verification…
 
     <form class="signup" action="{{action_uri}}" method="post" accept-charset="utf-8">
@@ -85,6 +91,12 @@ Now, in your Mustache template, include the 'form_context_fields' tag in additio
 		<input type="submit" name="submit" value="Go">
     </form>
     
+### Handling the submitted form
+
+The form submission is handler automatically by the main wordpress helper library.  Any form submission that includes a `frm_action` property will automatically trigger an action hook.  The action hook triggered will be of the form `frm_action_{frm_action_value}`
+
+
+### Verifying the form has not been tampered with
 
 When the form is submitted, you can verify the hidden fields have not been tampered with using the following code…
 
